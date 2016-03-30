@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/danieltr10/mercado-vale/issues"
   },
-  "homepage": "https://github.com/danieltr10/mercado-vale#readme"
+  "homepage": "https://github.com/danieltr10/mercado-vale#readme",
+  "devDependencies": {
+    "bootstrap": "^3.3.6"
+  }
 }
