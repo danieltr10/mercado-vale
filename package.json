@@ -1,0 +1,19 @@
+{
+  "name": "mercado-vale",
+  "version": "1.0.0",
+  "description": "mercado",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieltr10/mercado-vale.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danieltr10/mercado-vale/issues"
+  },
+  "homepage": "https://github.com/danieltr10/mercado-vale#readme"
+}
