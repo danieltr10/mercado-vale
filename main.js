@@ -9,6 +9,8 @@ $(function () {
 	$('#enviarForm').on('click', function() {
 		$texto = novoProduto(codigoProduto.value, $('#categoriaNegocio').val(), nomeProduto.value, descricaoProduto.value, $("#quantidade").val(), precoProduto.value, $("#tipoNegocio").val());
 		$produtos.append($texto);
+		resetForm();
+		$('#formNovoProduto').hide();
 
 	});
 
@@ -17,6 +19,15 @@ $(function () {
 
 	});
 
+	$('.botaoComprar').on('click', function() {
+		alert('Compra efetuada com sucesso !');
+	});
+
+	$('.botaoAdicionarCarrinho').on('click', function() {
+		alert('Produto adicionado ao carrinho !');
+	});
+
+
 
 
 });
@@ -24,15 +35,25 @@ $(function () {
 
 function novoProduto(codigo, categoria, nome, descricao, quantidade, preco, tipoNegocio) {
 
-	$stringNovoProduto = '<div class="col-sm-6 col-md-4"> <div class="panel panel-default"> <div class="panel-heading"> <h3 class="panel-title" class="nomeProduto">' + nome +' </h3> <p class="categoriaProduto">' + categoria + '</p> </div><div class="panel-body"> <img class="imagemProduto" src="http://loja.aquecedoreserefrigeracao.com.br/imagens/produto-sem-imagem.jpg" alt=""> <div class="caption"> <p class="precoOriginal">R$ ' + (preco*1.2) + '</p> <p class="precoFinal">R$ ' + preco + '</p> <p class="codigoProduto">Codigo: #' + codigo + '</p> <label >Sobre:</label> <div class="caption descricaoProduto">' + descricao + '</div> <p><a class="btn btn-primary" role="button">Editar esta oferta</a> <a href="#" class="btn btn-danger" role="button">Excluir Oferta</a></p> </div> </div> </div>';
+	$stringNovoProduto = '<div class="col-sm-6 col-md-4"> <div class="panel panel-default"> <div class="panel-heading"> <h3 class="panel-title" class="nomeProduto">' + nome +' </h3> <p class="categoriaProduto">' + categoria + '</p> <div class="quantidadeProduto">Qtde.' + quantidade + '</div> </div><div class="panel-body"> <img class="imagemProduto" src="http://loja.aquecedoreserefrigeracao.com.br/imagens/produto-sem-imagem.jpg" alt=""> <div class="caption"> <p class="precoOriginal">R$ ' + (preco*1.2) + '</p> <p class="precoFinal">R$ ' + preco + '</p> <p class="codigoProduto">Código: #' + codigo + '</p> <label >Sobre:</label> <div class="caption descricaoProduto">' + descricao + '</div>';
 
 	if (tipoNegocio == 'Venda') {
 
+		$stringNovoProduto += '<p><a class="btn btn-warning" style="width: 50%" role="button">Editar Venda</a> <a href="#" class="btn btn-danger" style="width: 50%" role="button">Excluir Oferta</a></p> </div> </div> </div>';
+
 		}
 	else {
+
+		$stringNovoProduto += '<p><a class="btn btn-warning" style="width: 50%" role="button">Editar Compra</a> <a href="#" class="btn btn-danger" style="width: 50%" role="button">Excluir Oferta</a></p> </div> </div> </div>';
 
 	}
 
 	return $stringNovoProduto;
 }
 
+function resetForm() {
+	nomeProduto.value = "";
+	codigoProduto.value  = "";
+	descricaoProduto.value = "";
+	precoProduto.value = "";
+}

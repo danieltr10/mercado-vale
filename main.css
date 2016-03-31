@@ -5,12 +5,15 @@
 }
 
 .categoriaProduto {
+	color: #59727A;
 	font-style: italic;
+	display: inline;
 	margin: 0;
 }
 
 .codigoProduto {
 	color: #999;
+	margin-top: 2%;
 }
 
 .imagemProduto {
@@ -32,6 +35,13 @@
 
 }
 
+.quantidadeProduto {
+	color: #59727A;
+	font-style: italic;
+	display: inline;
+	float: right;
+}
+
 .descricaoProduto {
 	overflow: auto;
 	width:100%;
@@ -41,6 +51,10 @@
 	margin-bottom: 3%;
 	display:;
 
+}
+
+.botaoComprar {
+	width: 30%;
 }
 
 .thumbnail {
